@@ -1,0 +1,9 @@
+{
+  "short_name": "DukaanAI",
+  "name": "DukaanAI – The Intelligent Voice Khata",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0a0d14",
+  "background_color": "#0a0d14"
+}

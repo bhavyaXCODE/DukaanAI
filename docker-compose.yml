@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: dukaanai_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dukaanai
+      POSTGRES_PASSWORD: dukaanai
+      POSTGRES_DB: dukaanai
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dukaanai -d dukaanai"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
+    name: dukaanai_pgdata
